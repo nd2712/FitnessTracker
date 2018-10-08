@@ -12,6 +12,7 @@
      android:layout_height = "wrap_content"
      android:text = "Hello "
      android:padding="8dp"
+     android:id="@+id/hello_msg"
      android:layout_centerInParent="true"
      android:textSize="24sp"
      />
