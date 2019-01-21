@@ -1,8 +1,10 @@
 package com.example.fitnesstracker;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity
 	DatabaseReference scanned_id_ref = database.getReference("scanned_id");
 	DatabaseReference users_ref = database.getReference("users");
 
+	FloatingActionButton cam_fab;
+
 	String scanned_uid;
 
 	TextView msg;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity
 		setContentView(R.layout.activity_main);
 
 		msg = findViewById(R.id.hello_msg);
+
+		cam_fab = findViewById(R.id.camera_icon);
 
 		scanned_id_ref.addValueEventListener(new ValueEventListener()
 		{
@@ -69,6 +75,14 @@ public class MainActivity extends AppCompatActivity
 			public void onCancelled(DatabaseError databaseError)
 			{
 
+			}
+		});
+
+		cam_fab.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view)
+			{
+				startActivity(new Intent(MainActivity.this,OcrActivity.class));
 			}
 		});
 

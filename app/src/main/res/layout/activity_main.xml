@@ -16,5 +16,14 @@
      android:layout_centerInParent="true"
      android:textSize="24sp"
      />
+	
+	<android.support.design.widget.FloatingActionButton
+	 android:layout_width = "wrap_content" android:layout_height = "wrap_content"
+	 android:id="@+id/camera_icon"
+	 android:layout_alignParentEnd="true"
+	 android:layout_alignParentBottom="true"
+	 android:layout_margin="8dp"
+	 app:fabSize="normal"
+	 android:src="@mipmap/ic_camera"/>
 
 </RelativeLayout>
