@@ -3,6 +3,7 @@ package com.example.fitnesstracker;
 import android.app.Application;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FitnessApplication extends Application
 {
@@ -11,6 +12,6 @@ public class FitnessApplication extends Application
 	{
 		super.onCreate();
 		FirebaseApp.initializeApp(this);
-//		FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+		FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 	}
 }

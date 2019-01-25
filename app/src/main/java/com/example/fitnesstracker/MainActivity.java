@@ -15,9 +15,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity
 {
-	FirebaseDatabase database = FirebaseDatabase.getInstance();
-	DatabaseReference scanned_id_ref = database.getReference("scanned_id");
-	DatabaseReference users_ref = database.getReference("users");
 
 	FloatingActionButton cam_fab;
 
@@ -34,6 +31,10 @@ public class MainActivity extends AppCompatActivity
 		msg = findViewById(R.id.hello_msg);
 
 		cam_fab = findViewById(R.id.camera_icon);
+
+		FirebaseDatabase database = FirebaseDatabase.getInstance();
+		DatabaseReference scanned_id_ref = database.getReference("scanned_id");
+		final DatabaseReference users_ref = database.getReference("users");
 
 		scanned_id_ref.addValueEventListener(new ValueEventListener()
 		{
